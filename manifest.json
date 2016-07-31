@@ -1,0 +1,23 @@
+{
+	"name": "BU Brain Rate My Professor Extension",
+	"description": "Shows Rate My Professor rating next to each professor's name in BU Brain course catelog",
+	"version": "0.1",
+	"manifest_version": 2,
+	
+	"permissions":[
+		"http://www.ratemyprofessors.com/*"
+	],
+
+	"content_scripts":[
+	{
+		"matches":["https://ssb.cc.binghamton.edu/banner/bwskfcls.P_GetCrse_Advanced"],
+		"js":["main.js"],
+		"run_at": "document_end"
+	}
+	],
+
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	}
+}
